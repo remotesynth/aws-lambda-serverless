@@ -1,0 +1,9 @@
+node_modules
+create-layer/node_modules
+create-layer/nodejs/node_modules
+
+# CDK asset staging directory
+.cdk.staging
+cdk.out
+
+.DS_Store
