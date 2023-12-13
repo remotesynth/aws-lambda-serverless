@@ -1,1 +1,2 @@
-create-layer/node_modules/async/log.js
+node_modules
+.DS_Store

@@ -8,7 +8,7 @@ execSync(
 );
 
 // create a zip of the
-let output = fs.createWriteStream("/cdk/resources/layers/layer.zip");
+let output = fs.createWriteStream("../cdk/resources/layers/layer.zip");
 let archive = archiver("zip", {
   zlib: { level: 9 },
 });
