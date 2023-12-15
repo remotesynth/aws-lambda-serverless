@@ -28,14 +28,14 @@ class CdkStack extends Stack {
     const flagsStarter = new lambda.Function(this, "getFlagsStarter", {
       runtime: lambda.Runtime.NODEJS_16_X,
       code: lambda.Code.fromAsset("resources/lambdas/getFlagsStarter"),
-      handler: "index.handler",
+      handler: "index.js",
       layers: [layer],
     });
 
     const flagsDynamo = new lambda.Function(this, "getFlagsWithDynamo", {
       runtime: lambda.Runtime.NODEJS_16_X,
       code: lambda.Code.fromAsset("resources/lambdas/getFlagsWithDynamo"),
-      handler: "index.handler",
+      handler: "index.js",
       layers: [layer],
     });
 

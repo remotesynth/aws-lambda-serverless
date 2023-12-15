@@ -29,7 +29,5 @@ exports.handler = async (event) => {
     // old code
   }
 
-  return new Response(JSON.stringify(myflag), {
-    status: 200,
-  });
+  return myFlag;
 };
