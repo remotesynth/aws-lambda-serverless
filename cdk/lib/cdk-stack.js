@@ -24,6 +24,27 @@ class CdkStack extends Stack {
       ],
       removalPolicy: RemovalPolicy.DESTROY,
     });
+
+    const flagsStarter = new lambda.Function(this, "getFlagsStarter", {
+      runtime: lambda.Runtime.NODEJS_16_X,
+      code: lambda.Code.fromAsset("resources/lambdas/getFlagsStarter"),
+      handler: "index.handler",
+      layers: [layer],
+    });
+
+    const flagsDynamo = new lambda.Function(this, "getFlagsWithDynamo", {
+      runtime: lambda.Runtime.NODEJS_16_X,
+      code: lambda.Code.fromAsset("resources/lambdas/getFlagsWithDynamo"),
+      handler: "index.handler",
+      layers: [layer],
+    });
+
+    const flagsToDynamo = new lambda.Function(this, "syncFlagsToDynamo", {
+      runtime: lambda.Runtime.NODEJS_16_X,
+      code: lambda.Code.fromAsset("resources/lambdas/syncFlagsToDynamo"),
+      handler: "index.handler",
+      layers: [layer],
+    });
   }
 }
 
