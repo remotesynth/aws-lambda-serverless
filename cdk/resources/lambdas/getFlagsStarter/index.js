@@ -14,8 +14,9 @@ exports.handler = async (event) => {
 
   // we're just using an anonymous user context for this example
   const context = {
-    type: "user",
-    key: "anonymous",
+    kind: "user",
+    key: "anonymous-1",
+    anonymous: true,
   };
 
   // in this example we're just getting a simple boolean flag with the key of "my-flag"
